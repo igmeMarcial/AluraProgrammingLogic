@@ -54,37 +54,146 @@
     // }
     // imprimir("fin");
 
+    // var inicioDeSesionRegistrado = "alura";
+    // var contrasenhaRegistrada = "alura321";
+
+    // var maximoIntentos = 3;
+    // var intentoActual = 1;
+
+    // while(intentoActual <= maximoIntentos){
+    //     var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+    //     var contrasenhaIngresada = prompt("Ingrese su contraseña");
+
+    //     if(inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada){
+    //         alert("Bienvenido al sistema" + inicioDeSesionIngresado);
+    //         intentoActual = maximoIntentos; // Lo hice bien, así que paso todos los intentos que falten y salgo del loop. Allá abajo aumentará +1! 
+    //     } else {
+    //         if (intentoActual == 3) {
+    //             alert("Agotaste el número permitido de intentos!");
+    //         } else {
+    //             alert("Inicio de sesión inválido. Favor intente de nuevo");
+    //         }
+    //     }
+
+    //    // vaya al próximo intento 
+    //     intentoActual = intentoActual +1  
+    // }
+//==========================
+    // var secretos = [3,5,7,9];
 
 
 
+	// var input = document.querySelector("input");
+	// input.focus();
+
+	// function verificar() {
+
+	// 	var encontrado = false;
+
+	// 	for(var posicion = 0; posicion < secretos.length; posicion++){
+			
+	// 		if (parseInt(input.value) == secretos[posicion]) {
+
+	// 			alert("Usted acertó");
+	// 			encontrado = true;
+	// 			break; 
+
+	// 		}
+
+	// 	}
+
+	// 	if (encontrado == false) {
+
+	// 		alert("Uster erró");
+
+	// 	}
+				
+	// 	input.value = "";
+	// 	input.focus();
+
+	// } 
+
+	// var button = document.querySelector("button");
+	// button.onclick = verificar;
 
 
 
-  
+ 
 
-    var inicioDeSesionRegistrado = "alura";
-    var contrasenhaRegistrada = "alura321";
+{/* <h1>Recetas de Armando </h1> */}
 
-    var maximoIntentos = 3;
-    var intentoActual = 1;
 
-    while(intentoActual <= maximoIntentos){
-        var inicioDeSesionIngresado = prompt("Ingrese su usuario");
-        var contrasenhaIngresada = prompt("Ingrese su contraseña");
+//   var ingredientes = [];
+//   var cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
+//   var contador = 1;
 
-        if(inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada){
-            alert("Bienvenido al sistema" + inicioDeSesionIngresado);
-            intentoActual = maximoIntentos; // Lo hice bien, así que paso todos los intentos que falten y salgo del loop. Allá abajo aumentará +1! 
-        } else {
-            if (intentoActual == 3) {
-                alert("Agotaste el número permitido de intentos!");
-            } else {
-                alert("Inicio de sesión inválido. Favor intente de nuevo");
+//   while(contador <= cantidad) {
+//     var ingrediente = prompt("Informe el ingrediente " + contador);
+//     var existe = false;
+//     for(var posicion = 0; posicion < ingredientes.length; posicion++) {
+//       if(ingredientes[posicion] == ingrediente){
+//         existe = true;
+//     alert("repetido " + ingrediente);
+//         break;
+//       }
+//      }
+//      if(existe == false) {
+//       ingredientes.push(ingrediente);
+//       contador++;
+//      }
+//    }
+//    console.log(ingredientes);
+
+//v3====================================================
+function aleatorio() {
+    return Math.round(Math.random()*10);
+}
+function sortearNumeros(cantidad) {
+    var secretos = [];
+    var contador = 1;  
+    while(contador<=cantidad){
+        var numeroAleatorio = aleatorio();
+        console.log(numeroAleatorio)
+        var encontrado = false;     
+        if (numeroAleatorio != 0){
+            for (var posicion = 0; posicion < secretos.length; posicion++) {
+                if (numeroAleatorio == secretos[posicion]) {
+                    encontrado = true;
+                    break;
+                }
             }
+            
+            if (encontrado == false) {
+                secretos.push(numeroAleatorio);
+                contador++;
+            }
+        }         
+    }	
+    return secretos
+}
+var secretos = sortearNumeros(4);
+console.log(secretos)
+
+var input = document.querySelector("input");
+input.focus();
+function verificar() {
+    var encontrado = false;
+    for(var posicion = 0; posicion < secretos.length; posicion++){      
+        if (parseInt(input.value) == secretos[posicion]) {
+            alert("Usted acertó");
+            encontrado = true;
+            break; 
         }
 
-       // vaya al próximo intento 
-        intentoActual = intentoActual +1  
     }
+    if (encontrado == false) {
+     alert("Uster erró");
+    }          
+    input.value = "";
+    input.focus();
+} 
+var button = document.querySelector("button");
+button.onclick = verificar;
+
 
 
