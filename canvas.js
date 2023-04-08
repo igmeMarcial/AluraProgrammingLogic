@@ -150,7 +150,8 @@
 //     pantalla.oncontextmenu = alterarColor;
 
 
-    //
+    //Crear la lógica que al momento de hacer clic el color del pincel cambie -
+    //  Parte 2: Seleccionar color de la paleta
     var pantalla = document.querySelector('canvas');
     var pincel = pantalla.getContext('2d');
 
